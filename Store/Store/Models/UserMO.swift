@@ -38,7 +38,14 @@ extension UserMO{
     static public func loadFromArray(fromArray model:[UserMO], realm:Realm) throws {
         let usersModel = model.map { (output) -> UserMO in
             let userMO = UserMO()
-           
+            userMO.id = output.id
+            userMO.name = output.name
+            userMO.username = output.username
+            userMO.email = output.email
+            userMO.address = output.address
+            userMO.phone = output.phone
+            userMO.website = output.website
+            userMO.company = output.company
             return userMO
         }
 
